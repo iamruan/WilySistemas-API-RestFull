@@ -27,7 +27,8 @@ namespace API.Infra
         }
         public List<T> Get() => _model.Find(active => true).ToList();
 
-        public T Get(string id) => _model.Find<T>(news => news.Id == id).FirstOrDefault();
+        public T Get(string id) => 
+            _model.Find<T>(news => news.Id == id).FirstOrDefault();
 
         public T Create(T news)
         {
